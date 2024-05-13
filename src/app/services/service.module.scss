@@ -1,0 +1,395 @@
+@mixin section_title ($fontSize, $fontWeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+}
+
+$border-button : 12px;
+$content-text-color :#7E7E7E;
+$root-page-text-color: #7E7E7E;
+
+.main_headings {
+
+    margin: 100px;
+    .page_title {
+        @include section_title(40px, 700);
+        text-align: center;
+    }
+
+    .page_directory {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .page_name {
+        @include section_title(15px, 500)
+    }
+
+    .root_page {
+        color: $root-page-text-color;
+    }
+
+    .heading_service_pg {
+        @extend .page_directory;
+        @include section_title(14px, 700)
+    }
+
+    .quality_service {
+        color: #B479D9;
+        display: flex;
+        justify-content: center;
+        @include section_title(18px, 700)
+    }
+
+
+}
+
+.service_page_container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap:10px;
+    flex-wrap: wrap;
+
+
+    .service_page_card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.service_page_ad {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+    .service_page_card {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 30%;
+        text-align: center;
+
+        .service_page_ad_btn {
+            background-color: white;
+            color: black;
+            padding: 10px;
+            border-radius: $border-button;
+        }
+
+        .service_page_ad_title {
+            @include section_title(24px, 700)
+        }
+
+        img {
+            width: 70%;
+        }
+    }
+
+    * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.service_sub_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.service_sub_container_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .recharge_image {
+        width: 20px;
+    }
+}
+
+.service_page_cards1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+
+    .cards>* {
+        width: 200px;
+    }
+
+    .cards>img {
+        position: relative;
+    }
+
+    .cards>p {
+        position: relative;
+        bottom: 20%;
+        left: 6%;
+        color: white;
+    }
+
+    .cards:hover {
+        filter: brightness(0.6);
+    }
+}
+
+.service_page_shop_container {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    .shop_card_services {
+        padding: 20px;
+
+        .print_shirts_buisness {
+            @include section_title(40px, 700);
+ 
+        }
+
+        .print_shirts_buisness~p {
+            width: 60%;
+            @include section_title(18px, 500);
+            color: $content-text-color;
+        }
+
+        * {
+            margin-bottom: 20px;
+        }
+
+        .primary_button {
+            padding: 20px 20px;
+            @include section_title(16px, 700);
+            border-radius: $border-button;
+        }
+    }
+
+    .service_page_sub_cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+
+        .order_customer_cards {
+            width: 70%;
+
+            .service_cards_title {
+                @include section_title(20px, 700)
+            }
+
+            .service_cards_title~p {
+                @include section_title(15px, 500);
+                color: $content-text-color;
+            }
+
+            * {
+                padding: 20px;
+            }
+        }
+    }
+
+    .service_page_order_customer {
+        grid-row-start: 3;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        display: grid;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .service_page_order_container {
+            position: absolute;
+            top:10%;
+            left: 5%;
+
+            .title_order_customer {
+                width: 60%;
+                padding-bottom: 20px;
+                @include section_title(24px, 700);
+            }
+
+            .title_order_customer+p {
+                padding-bottom: 30px;
+                @include section_title(18px, 500);
+                color: $content-text-color ;
+            }
+
+            .primary_button {
+                padding: 10px;
+                @include section_title(15px, 700);
+                border-radius: $border-button;
+            }
+        }
+    }
+}
+
+.printing_made_easy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .page_heading {
+        @include section_title(40px, 700);
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.service_faq {
+    border-radius: 6px;
+    max-width: 80rem;
+}
+
+.primary_button{
+    background-color: #2EBB77;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.accordian_link {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+}
+
+.dropdown .accordian_link:focus {
+    border-radius: 12px;
+    background-color: #2EBB77;
+    color: white;
+}
+
+@media screen and (max-width:640px) {
+    .service_sub_container  > img{
+        display: none;
+    }
+    .service_sub_container {
+        grid-template-columns: 1fr;
+    }
+    .main_headings {
+        .page_title {
+            @include section_title(16px, 700);
+        }
+    }
+    .service_page_shop_container {
+        grid-template-columns:1fr ;
+        grid-template-rows: 3fr;
+
+        .service_page_sub_cards{
+            grid-row-start: 2;
+            grid-template-columns: repeat(3,minmax(80px,1fr));
+            .order_customer_cards {
+                width: 70%;
+    
+                .service_cards_title {
+                    @include section_title(10px, 700)
+                }
+    
+                .service_cards_title~p {
+                    @include section_title(8px, 500);
+                    color: $content-text-color;
+                }
+    
+                * {
+                    padding: 20px;
+                }
+            }
+        }
+
+        .shop_card_services {
+            .print_shirts_buisness {
+                @include section_title(16px, 700);
+            }
+        }
+        .service_page_order_customer {
+            grid-row-start: 3;
+            grid-column-start: 1;
+    
+            .service_page_order_container {
+    
+                .title_order_customer {
+                    width: 60%;
+                    padding-bottom: 10px;
+                    @include section_title(12px, 700);
+                }
+    
+                .title_order_customer+p {
+                    padding-bottom: 10px;
+                    @include section_title(9px, 500);
+                    color: $content-text-color ;
+                }
+    
+                .primary_button {
+                    padding: 10px;
+                    @include section_title(8px, 700);
+                }
+            }
+        }
+    }
+
+    .service_page_ad {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        @include section_title(11px, 200);
+    
+        .service_page_card {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            width: 30%;
+            text-align: center;
+    
+            .service_page_ad_btn {
+                background-color: white;
+                color: black;
+                padding: 10px;
+                border-radius: $border-button;
+            }
+    
+            .service_page_ad_title {
+                @include section_title(14px, 700)
+            }
+    
+            img {
+                width: 70%;
+            }
+        }
+    
+        * {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .printing_made_easy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    
+        .page_heading {
+            @include section_title(14px, 700);
+            display: flex;
+            justify-content: center;
+        }
+    
+    }
+
+    
+}
